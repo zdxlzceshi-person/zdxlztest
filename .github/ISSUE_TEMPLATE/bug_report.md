@@ -4,7 +4,6 @@ description: "报告 cqlib 的功能异常或错误"
 title: "[BUG] "
 labels: ["bug"]
 assignees: []
-
 ---
 
 ## Bug 描述
