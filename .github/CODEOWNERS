@@ -1,0 +1,27 @@
+# cqlib CODEOWNERS 文件
+# 语法：<文件路径模式>  @<组织名>/<团队名>
+# 说明：PR 涉及到对应路径的文件时，GitHub 会自动请求指定的团队或人员进行审核
+#
+# GitHub 团队引用格式：
+#   @zdxlzceshi-person/core-developers      → 研发团队
+#   @zdxlzceshi-person/community-operator    → 社区运营团队
+#   注意：团队名中有空格需用连字符代替（如 Community operator → community-operator）
+
+# ========== 核心代码仓库（codecore）==========
+# 由 core-developers 团队维护
+/codecore/                    @zdxlzceshi-person/core-developers
+/codecore/**                  @zdxlzceshi-person/core-developers
+
+# ========== 社区仓库（community）==========
+# 由 Community operator 团队维护
+/community/                   @zdxlzceshi-person/community-operator
+/community/**                 @zdxlzceshi-person/community-operator
+
+# ========== 组织级配置文件（兜底）==========
+# .github/ 目录下的 CI、模板等由两个团队共同审核
+/.github/                     @zdxlzceshi-person/core-developers @zdxlzceshi-person/community-operator
+/.github/**                   @zdxlzceshi-person/core-developers @zdxlzceshi-person/community-operator
+
+# ========== 默认规则 ==========
+# 其他所有文件由研发团队兜底审核
+*                             @zdxlzceshi-person/core-developers
