@@ -1,52 +1,59 @@
-## 变更类型
+## Description / 变更说明
 
-<!-- 请勾选本次 PR 涉及的变更类型 -->
+<!-- Describe what this PR does and why. / 说明这个 PR 做了什么变更以及为什么。 -->
 
-- [ ] `feat` 新功能
-- [ ] `fix` Bug 修复
-- [ ] `docs` 文档改进
-- [ ] `test` 测试改进
-- [ ] `refactor` 代码重构
-- [ ] `perf` 性能优化
-- [ ] `chore` 构建/工具链改动
+## Related Issues / 关联 Issue
 
-## 目标分支
+<!-- Link related issues: Closes #123, Related to #456 / 关联的 Issue 编号 -->
 
-<!-- 请确认 PR 的目标分支 -->
-<!-- 新功能/Bug修复 → develop；紧急修复（hotfix）→ main -->
+## Changes / 具体改动
 
-- [ ] 已确认目标分支为 `develop`
+<!-- List key changes / 列出主要改动点 -->
+-
 
-## 关联 Issue
+## Component Impact / 影响范围
 
-<!-- 请关联相关 Issue -->
-<!-- 例如：Fixes #123（合并后自动关闭 Issue #123）-->
-<!-- 如无关联 Issue，请说明变更原因 -->
+<!-- Check affected components / 勾选涉及的组件 -->
 
-Fixes #
+- [ ] `cqlib-core` (Rust core / 核心库)
+- [ ] `binding-python` (Python bindings / Python 绑定)
+- [ ] `binding-c` (C bindings / C 绑定)
+- [ ] `cqlib` (public Rust crate / 对外 crate)
+- [ ] Documentation / 文档
+- [ ] CI / Build / 构建系统
 
-## 变更描述
+## Testing / 测试
 
-<!-- 请描述本次改动的内容和原因 -->
-<!-- 如果是 Bug 修复，请说明问题根因和修复方式 -->
-<!-- 如果是新功能，请说明设计思路 -->
+<!-- Describe how you tested your changes / 说明你是如何测试这些改动的 -->
 
-## 测试验证
+### Commands run / 运行的测试命令
 
-- [ ] 已在本地运行 `pytest tests/`，全部通过
-- [ ] 已运行 `ruff check .`，无报错
-- [ ] 已添加/更新对应测试用例（如适用）
-- [ ] 已更新相关文档（如适用）
+```bash
+# Rust tests
+cargo test --all
+cargo test -p cqlib-core
+cargo test -p binding-c
 
-## 测试步骤（供审核者验证）
+# Python tests
+maturin develop -m crates/binding-python/Cargo.toml
+pytest tests/python/
+```
 
-<!-- 描述审核者可以如何验证本次改动 -->
-<!-- 例如：运行 `python examples/demo.py`，输出应为 XXX -->
+### Test results / 测试结果
 
-## 截图/录屏（可选）
+<!-- Paste test output or describe results / 贴出测试结果或描述大致情况 -->
 
-<!-- 如涉及可视化输出变更，可附上截图 -->
+## Checklist / 检查清单
 
-## 备注
+- [ ] My change is based on the latest `main` branch / 改动基于最新 `main` 分支
+- [ ] I have read the [Contributing Guide](CONTRIBUTING.md) / 已阅读贡献指南
+- [ ] Code style checks pass (`cargo fmt`, `cargo clippy`, `ruff check`) / 代码风格检查通过
+- [ ] I have added tests that prove my fix/feature works / 已添加测试验证
+- [ ] New and existing tests pass locally / 新旧测试全部通过
+- [ ] I have updated documentation as needed / 已更新相关文档
+- [ ] No unrelated files, debug code, or temporary output / 无无关文件或调试代码
+- [ ] Commit messages follow [conventional format](https://www.conventionalcommits.org/) / 提交信息遵循规范格式
 
-<!-- 其他需要审核者注意的事项 -->
+## Notes for Reviewers / 评审提示
+
+<!-- Anything reviewers should pay attention to / 需要评审者关注的点 -->
